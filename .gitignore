@@ -1,0 +1,4 @@
+tmp/
+*.pid
+.DS_store
+backup
