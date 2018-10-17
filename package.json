@@ -1,11 +1,11 @@
 {
-  "name": "Eshop",
+  "name": "eshop-ck5000",
   "description": "A simple and powerful Eshop solution written in Total.js / Node.js.",
   "version": "11.0.0",
   "main": "release.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/totaljs/eshop"
+    "url": "https://github.com/ck5000/tmdt"
   },
   "dependencies": {
     "paypal-express-checkout": "latest",
