@@ -1,20 +1,20 @@
 // Common
-homepage          : @(Homepage)            --> /
+homepage          : @(Trang chủ)            --> /
 posts             : @(Blog)                --> @(/blog/)                 --> homepage
 post              : @(Post)                --> @(/blog/{0}/)             --> posts
-notices           : @(Notices)             --> @(/notices/)              --> homepage
+notices           : @(Thông báo)             --> @(/notices/)              --> homepage
 
 // Admin area
 admin             : @(Admin)               --> @(/admin/*)
 
 // Eshop
-checkout          : @(Checkout)            --> @(/checkout/)            --> homepage
-category          : @(All products)        --> @(/categories/*)         --> homepage
-detail            : @(Product detail)      --> @(/detail/{0}/)          --> category
-top               : @(Top products)        --> @(/top/)                 --> homepage
-new               : @(New products)        --> @(/new/)                 --> homepage
-popular           : @(Popular products)    --> @(/popular/)             --> homepage
+checkout          : @(Thanh toán)            --> @(/checkout/)            --> homepage
+category          : @(Tất cả sách)        --> @(/categories/*)         --> homepage
+detail            : @(Chi tiết sách)      --> @(/detail/{0}/)          --> category
+top               : @(Sách hay)        --> @(/top/)                 --> homepage
+new               : @(Sách mới)        --> @(/new/)                 --> homepage
+popular           : @(Sách phổ biến)    --> @(/popular/)             --> homepage
 account           : @(My account)          --> @(/account/)             --> homepage
-order             : @(Order detail)        --> @(/checkout/{0}/)        --> account
-settings          : @(Account settings)    --> @(/account/settings/)    --> account
-logoff            : @(Logoff)              --> @(/logoff/)              --> homepage
+order             : @(Thông tin đơn hàng)        --> @(/checkout/{0}/)        --> account
+settings          : @(Cài đặt tài khoản)    --> @(/account/settings/)    --> account
+logoff            : @(Đăng xuất)              --> @(/logoff/)              --> homepage

@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-3 col-sm-6 m">
 		<div data-jc="clickbox" class="ui-clickbox" data-jc-config="param:manufacturer">
-			<a href="@{href('manufacturer', '', 'page')}">@(All manufacturers)</a>
+			<a href="@{href('manufacturer', '', 'page')}">@(Tất cả tác giả)</a>
 			@{if repository.category}
 				@{foreach m in repository.category.manufacturers}
 					@{if m.count}
@@ -19,7 +19,7 @@
 	</div>
 	<div class="col-md-3 col-sm-6 m">
 		<div data-jc="clickbox" class="ui-clickbox" data-jc-config="param:size">
-			<a href="@{href('size', '', 'page')}">@(All sizes)</a>
+			<a href="@{href('size', '', 'page')}">@(Tất cả kích thước)</a>
 			@{if repository.category}
 				@{foreach m in repository.category.sizes}
 					<a href="@{href('size', m, 'page')}">@(Size:) @{m}</a>
@@ -33,7 +33,7 @@
 	</div>
 	<div class="col-md-3 col-sm-6 m">
 		<div data-jc="clickbox" class="ui-clickbox" data-jc-config="param:color">
-			<a href="@{href('color', '', 'page')}">@(All colors)</a>
+			<a href="@{href('color', '', 'page')}">@(Tất cả màu)</a>
 			@{if repository.category}
 				@{foreach m in repository.category.colors}
 					<a href="@{href('color', m, 'page')}">@(Color:) @{m}</a>
@@ -47,9 +47,9 @@
 	</div>
 	<div class="col-md-3 col-sm-6 m">
 		<div data-jc="clickbox" class="ui-clickbox" data-jc-config="param:sort">
-			<a href="@{href('sort', '')}">@(Newest)</a>
-			<a href="@{href('sort', 'pricemin_asc')}">@(Low price)</a>
-			<a href="@{href('sort', 'pricemin_desc')}">@(High price)</a>
+			<a href="@{href('sort', '')}">@(Mới nhất)</a>
+			<a href="@{href('sort', 'pricemin_asc')}">@(Giá thấp tới cao)</a>
+			<a href="@{href('sort', 'pricemin_desc')}">@(Giá cao tới thấp)</a>
 		</div>
 	</div>
 </div>

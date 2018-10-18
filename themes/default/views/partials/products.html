@@ -24,7 +24,7 @@
 				@{if m.stock}
 					<a href="@{m.linker}" class="more"><i class="fa fa-plus"></i>@(Detail)</a>
 				@{else}
-					<span class="outofstock">@(Out of stock)</span>
+					<span class="outofstock">@(Hết hàng)</span>
 				@{fi}
 				<div>@{!m.pricemin.currency()}@{if m.priceold && m.priceold > m.pricemin} <span>@{!m.priceold.currency()}</span>@{fi}</div>
 			</div>

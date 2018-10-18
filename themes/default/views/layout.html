@@ -27,10 +27,10 @@
 			<div class="account">
 				@{if user}
 					<a href="@{sitemap_url('account')}" class="b">@{user.name}</a>
-					<a href="@{sitemap_url('settings')}"><i class="fa fa-cog"></i>@(Settings)</a>
-					<a href="@{sitemap_url('logoff')}"><i class="fa fa-sign-out"></i>@()</a>
+					<a href="@{sitemap_url('settings')}"><i class="fa fa-cog"></i>@(Cài đặt)</a>
+					<a href="@{sitemap_url('logoff')}"><i class="fa fa-sign-out"></i>@(Đăng xuất)</a>
 				@{else}
-					<a href="@{sitemap_url('account')}"><i class="fa fa-lock"></i>@(Sign in)</a>
+					<a href="@{sitemap_url('account')}"><i class="fa fa-lock"></i>@(Đăng nhập)</a>
 				@{fi}
 			</div>
 		</div>
@@ -72,11 +72,11 @@
 							@{end}
 						</nav>
 						<div class="shoppingcart" data-m="shoppingcart.sum + shoppingcart">
-							<a href="@{sitemap_url('checkout')}"><b data-b="shoppingcart.sum" data-b-html="'@{global.config.currency_entity}'.format(value ? value.format(2) : (0).format(2))">...</b><span>@(Your shopping cart)</span></a>
+							<a href="@{sitemap_url('checkout')}"><b data-b="shoppingcart.sum" data-b-html="'@{global.config.currency_entity}'.format(value ? value.format(2) : (0).format(2))">...</b><span>@(Giỏ hàng)</span></a>
 						</div>
 						<form class="search" action="@{sitemap_url('category')}" method="get">
 							<button><i class="fa fa-search"></i></button>
-							<div><input type="text" placeholder="@(Search products ...)" name="q" value="@{query.q}" id="search" autocomplete="off" /></div>
+							<div><input type="text" placeholder="@(Tìm kiếm sách)" name="q" value="@{query.q}" id="search" autocomplete="off" /></div>
 						</form>
 					</header>
 
