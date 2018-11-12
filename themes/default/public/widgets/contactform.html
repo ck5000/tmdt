@@ -7,28 +7,28 @@
 </style>
 
 <div class="wcontactform" data-jc-scope="?" data-jc-init="wcontactform_init">
-	<label><i class="fa fa-envelope-o"></i>@(Contact form)</label>
+	<label><i class="fa fa-envelope-o"></i>@(Mẫu liên hệ)</label>
 	<div class="wcontactformbody">
 		<div class="row">
 			<div class="col-md-5 m">
-				<div data-jc="textbox" data-jc-path="firstname" data-jc-config="required:true;maxlength:40" data-jc-value="''">@(First name)</div>
+				<div data-jc="textbox" data-jc-path="firstname" data-jc-config="required:true;maxlength:40" data-jc-value="''">@(Tên)</div>
 			</div>
 			<div class="col-md-5 m">
-				<div data-jc="textbox" data-jc-path="lastname" data-jc-config="required:true;maxlength:40" data-jc-value="''">@(Last name)</div>
+				<div data-jc="textbox" data-jc-path="lastname" data-jc-config="required:true;maxlength:40" data-jc-value="''">@(Họ)</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-5 m">
-				<div data-jc="textbox" data-jc-path="email" data-jc-config="required:true;maxlength:120;type:email;icon:envelope-o" data-jc-value="'@'">@(Email address)</div>
+				<div data-jc="textbox" data-jc-path="email" data-jc-config="required:true;maxlength:120;type:email;icon:envelope-o" data-jc-value="'@'">@(Địa chỉ email)</div>
 			</div>
 			<div class="col-md-5 m">
-				<div data-jc="textbox" data-jc-path="phone" data-jc-config="maxlength:30;icon:phone;placeholder:@(International format)" data-jc-value="''">@(Phone number)</div>
+				<div data-jc="textbox" data-jc-path="phone" data-jc-config="maxlength:30;icon:phone;placeholder:@()" data-jc-value="''">@(Số điện thoại)</div>
 			</div>
 		</div>
-		<div data-jc="textarea" data-jc-path="body" class="m" data-jc-config="required:true;height:120" data-jc-value="''">@(Message)</div>
+		<div data-jc="textarea" data-jc-path="body" class="m" data-jc-config="required:true;height:120" data-jc-value="''">@(Nội dung)</div>
 		<div data-jc="error" data-jc-path="response"></div>
 		<div data-jc="validation" data-jc-path="?">
-			<button name="submit" class="button exec b" data-exec="wcontactform_submit" disabled="disabled"><i class="fa fa-send"></i>@(SEND FORM)</button>
+			<button name="submit" class="button exec b" data-exec="wcontactform_submit" disabled="disabled"><i class="fa fa-send"></i>@(GỬI)</button>
 		</div>
 	</div>
 </div>

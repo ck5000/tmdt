@@ -6,31 +6,31 @@
 
 			@{if query.paid === '0'}
 			<div class="contentwarning">
-				<i class="fa fa-warning"></i>@(We didn't receive a payment. <b>Try to pay again</b>.)
+				<i class="fa fa-warning"></i>@(Chúng tôi chưa nhận được thanh toán. <b>Thử thanh toán lại</b>.)
 			</div>
 			@{fi}
 
 			@{if query.paid === '1'}
 			<div class="contentsuccess">
-				<i class="fa fa-check-circle"></i>@(<b>Thank you</b>, order has been paid.)
+				<i class="fa fa-check-circle"></i>@(<b>Cảm ơn bạn</b>, đơn hàng đã được thanh toán.)
 			</div>
 			@{fi}
 
 			@{if model.isfinished}
 			<div class="contentsuccess">
-				<i class="fa fa-check-circle"></i>@(Finished)
+				<i class="fa fa-check-circle"></i>@(Kết thúc)
 			</div>
 			@{fi}
 
 			<div class="contentbody">
-				<div class="help nmb"><i class="fa fa-clock-o"></i>@(Order status:)</div>
+				<div class="help nmb"><i class="fa fa-clock-o"></i>@(Tình trạng đơn hàng:)</div>
 				<div class="b red">@{model.status}</div>
 			</div>
 
 			@{if model.statushistory && model.statushistory.length > 1}
 				<div class="order-historystatus">
 				@{foreach m in model.statushistory.reverse()}
-					<div><i class="fa fa-clock-o"></i><b>@{m.date.format('@(yyyy-MM-dd HH:mm)')}</b> - @{m.status}</div>
+					<div><i class="fa fa-clock-o"></i><b>@{m.date.format('@(dd-MM-yyyy HH:mm)')}</b> - @{m.status}</div>
 				@{end}
 				</div>
 			@{fi}
@@ -46,39 +46,39 @@
 
 			<div class="contentbody">
 				<div class="keyvalue">
-					<div class="key">@(Customer)</div>
+					<div class="key">@(Khách hàng)</div>
 					<div class="value">@{model.firstname} @{model.lastname}</div>
 				</div>
 
 				@{if model.iscompany}
 				<div class="keyvalue">
-					<div class="key">@(Company)</div>
+					<div class="key">@(Công ty)</div>
 					<div class="value">@{model.company}</div>
 					<div class="value silver fs12" style="margin-top:5px">@{model.companyid}<br />@{model.companyvat}</div>
 				</div>
 				@{fi}
 
 				<div class="keyvalue">
-					<div class="key">@(Email address)</div>
+					<div class="key">@(Địa chỉ email)</div>
 					<div class="value">@{model.email}</div>
 				</div>
 
 				<div class="keyvalue">
-					<div class="key">@(Phone number)</div>
+					<div class="key">@(Số điện thoại)</div>
 					<div class="value">@{model.phone}</div>
 				</div>
 
 				@{if model.note}
 				<div class="keyvalue">
-					<div class="key">@(Note)</div>
+					<div class="key">@(Ghi chú)</div>
 					<div class="value">@{model.note}</div>
 				</div>
 				@{fi}
 
 				@{if !model.isfinished && !model.ispaid}
 					<br />
-					<div><button class="button b exec" name="paypal" data-exec="pay"><i class="fa fa-paypal"></i>@(Pay now)</button></div>
-					<div class="help">@(You will be redirect to secured <b>PayPal</b> payment page.)</div>
+					<div><button class="button b exec" name="paypal" data-exec="pay"><i class="fa fa-paypal"></i>@(Thanh toán ngay bây giờ)</button></div>
+					<div class="help">@(Bạn sẽ được chuyển tới trang thanh toán <b>PayPal</b> ngay bây giờ.)</div>
 				@{fi}
 
 			</div>
@@ -88,27 +88,27 @@
 			<div class="row">
 				<div class="col-md-6 m">
 					<div class="keyvalue">
-						<div class="key">@(Number)</div>
+						<div class="key">@(Mã đơn hàng)</div>
 						<div class="value">@{model.number}</div>
 					</div>
 				</div>
 				@{if model.ispaid}
 				<div class="col-md-6 m">
 					<div class="keyvalue">
-						<div class="key">@(Paid)</div>
-						<div class="value green"><i class="fa fa-check-circle"></i>@{model.datepaid.format('yyyy-MM-dd HH:mm')}</div>
+						<div class="key">@(Đã thanh toán)</div>
+						<div class="value green"><i class="fa fa-check-circle"></i>@{model.datepaid.format('dd-MM-yyyy HH:mm')}</div>
 					</div>
 				</div>
 				@{fi}
 				<div class="col-md-6 m">
 					<div class="keyvalue">
-						<div class="key">@(Created)</div>
-						<div class="value">@{model.datecreated.format('yyyy-MM-dd HH:mm')}</div>
+						<div class="key">@(Ngày tạo đơn hàng)</div>
+						<div class="value">@{model.datecreated.format('dd-MM-yyyy HH:mm')}</div>
 					</div>
 				</div>
 				<div class="col-md-6 m">
 					<div class="keyvalue">
-						<div class="key">@(Price)</div>
+						<div class="key">@(Giá)</div>
 						<div class="value">@{!model.price.currency()}</div>
 					</div>
 				</div>
@@ -120,13 +120,13 @@
 				</div>
 				<div class="col-md-6 m">
 					<div class="keyvalue">
-						<div class="key">@(Discount)</div>
+						<div class="key">@(Giảm giá)</div>
 						<div class="value">@{model.discount}%</div>
 					</div>
 				</div>
 				<div class="col-md-6 m">
 					<div class="keyvalue">
-						<div class="key">@(IP address)</div>
+						<div class="key">@(Địa chỉ IP)</div>
 						<div class="value">@{model.ip}</div>
 					</div>
 				</div>
@@ -137,39 +137,39 @@
 		<div class="content">
 			<div class="contentbody bg-yellow">
 				<div class="keyvalue m">
-					<div class="key"><i class="fa fa-dropbox"></i>@(Delivery)</div>
+					<div class="key"><i class="fa fa-dropbox"></i>@(Vận chuyển)</div>
 					<div class="value">@{model.delivery}</div>
 				</div>
 				<div class="keyvalue m">
-					<div class="key"><i class="fa fa-dropbox"></i>@(Payment)</div>
-					<div class="value">@{model.payment}@{if model.ispaid}<span class="badge badge-green">@(PAID)</span>@{else}<span class="badge">@(NOT PAID)</span>@{fi}</div>
+					<div class="key"><i class="fa fa-dropbox"></i>@(Thanh toán)</div>
+					<div class="value">@{model.payment}@{if model.ispaid}<span class="badge badge-green">@(PAID)</span>@{else}<span class="badge">@(CHƯA THANH TOÁN)</span>@{fi}</div>
 				</div>
 				<div class="keyvalue m">
-					<div class="key"><i class="fa fa-at"></i>@(Tracking code)</div>
-					<div class="value">@{if model.trackingcode}@{model.trackingcode}@{else}@(Undefined)@{fi}</div>
+					<div class="key"><i class="fa fa-at"></i>@(Mã vận chuyển)</div>
+					<div class="value">@{if model.trackingcode}@{model.trackingcode}@{else}@(Không xác định)@{fi}</div>
 				</div>
 			</div>
 			<div class="contentbody">
 				<div class="keyvalue m">
-					<div class="key"><i class="fa fa-address-book"></i>@(Billing address)</div>
+					<div class="key"><i class="fa fa-address-book"></i>@(Địa chỉ xuất hoá đơn)</div>
 					<div class="value">@{model.billingstreet}<br />@{model.billingzip}<br />@{model.billingcity}<br />@{model.billingcountry}</div>
 				</div>
 				<div class="keyvalue">
-					<div class="key"><i class="fa fa-truck"></i>@(Delivery address)</div>
-					<div class="value">@{model.deliveryfirstname} @{model.deliverylastname}<br />@{model.deliverystreet}<br />@{model.deliveryzip}<br />@{model.deliverycity}<br />@{model.deliverycountry}<br />@(Phone:) @{model.deliveryphone}</div>
+					<div class="key"><i class="fa fa-truck"></i>@(Địa chỉ nhận hàng)</div>
+					<div class="value">@{model.deliveryfirstname} @{model.deliverylastname}<br />@{model.deliverystreet}<br />@{model.deliveryzip}<br />@{model.deliverycity}<br />@{model.deliverycountry}<br />@(SĐT:) @{model.deliveryphone}</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <br />
-<h2>@(Ordered items)</h2>
+<h2>@(Sách đã đặt)</h2>
 <table class="table table-bordered bg-white">
 	<thead>
 		<tr>
-			<th>@(Product name)</th>
-			<th class="ui-center col-xs-1">@(Count)</th>
-			<th class="ui-right col-sm-3 col-xs-4">@(Price)</th>
+			<th>@(Tên sách)</th>
+			<th class="ui-center col-xs-1">@(Số lượng)</th>
+			<th class="ui-right col-sm-3 col-xs-4">@(Giá)</th>
 		</tr>
 	</thead>
 	<tbody class="orderedproducts">
@@ -183,7 +183,7 @@
 	</tbody>
 	<tfoot>
 		<tr class="bg-yellow">
-			<td class="b">@(Summarize)</td>
+			<td class="b">@(Tổng cộng)</td>
 			<td class="b ui-center">@{model.count}</td>
 			<td class="b ui-right red">@{!model.price.currency()}</td>
 		</tr>

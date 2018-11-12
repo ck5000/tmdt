@@ -7,29 +7,29 @@
 	<div class="col-md-4 m">
 
 		<div class="keyvalue npt">
-			<div class="key">@(Account name)</div>
+			<div class="key">@(Tên tài khoản)</div>
 			<div class="value">@{user.name}</div>
 		</div>
 
 		<div class="keyvalue">
-			<div class="key">@(Email address)</div>
+			<div class="key">@(Địa chỉ email)</div>
 			<div class="value">@{user.email}</div>
 		</div>
 
 		<div class="keyvalue">
-			<div class="key">@(Phone number)</div>
+			<div class="key">@(Số điện thoại)</div>
 			<div class="value">@{if user.phone}@{user.phone}@{else}@(undefined)@{fi}</div>
 		</div>
 
 		<div class="keyvalue">
-			<div class="key">@(Discount)</div>
-			<div class="value">@{user.discount.format(2)}%</div>
+			<div class="key">@(Giảm giá)</div>
+			<div class="value">@{user.discount.format(1)}%</div>
 		</div>
 		<br />
 
 		<div>
-			<a href="@{sitemap_url('settings')}" class="link"><i class="fa fa-caret-right"></i>@(Update account)</a>
-			<a href="@{sitemap_url('category')}" class="link"><i class="fa fa-caret-right"></i>@(Browse goods)</a>
+			<a href="@{sitemap_url('settings')}" class="link"><i class="fa fa-caret-right"></i>@(Cập nhật thông tin)</a>
+			<a href="@{sitemap_url('category')}" class="link"><i class="fa fa-caret-right"></i>@(Tìm sách)</a>
 		</div>
 
 	</div>
@@ -37,10 +37,10 @@
 	<div class="col-md-8 m">
 		<div class="content">
 			<div class="contentbody npb">
-				<div class="caption">@(My orders) (<b data-b="orders" data-b-html="value ? value.length : 0"></b>)</div>
+				<div class="caption">@(Đơn hàng của tôi) (<b data-b="orders" data-b-html="value ? value.length : 0"></b>)</div>
 			</div>
 			<div data-b="orders" data-b-visible="!value || !value.length" class="hidden">
-				<div class="empty"><i class="fa fa-dropbox"></i>@(You don't have any orders.)</div>
+				<div class="empty"><i class="fa fa-dropbox"></i>@(Bạn không có đơn hàng nào.)</div>
 			</div>
 			<div data-b="orders" data-b-template="true" class="hidden" data-b-visible="value && value.length">
 				<script type="text/html">
@@ -48,12 +48,12 @@
 						<div class="order">
 							<a href="@{sitemap_url('order', '{{ m.id }}')}" title="@(Preview)"><i class="fa fa-search"></i></a>
 							<div class="line">
-								<div class="price">{{ m.price | format(2) }}</div>
+								<div class="price">{{ m.price | format(1) }}</div>
 								<div class="name">{{ m.name }}</div>
 							</div>
 							<div class="line">
-								<div class="date">{{ m.datecreated | format('@(yyyy-MM-dd HH:mm)') }}</div>
-								<div class="status">{{ if m.isfinished }}<b class="green"><i class="fa fa-check-circle"></i>@(Finished)</b>{{ else }}{{ m.status }}{{ fi }}</div>
+								<div class="date">{{ m.datecreated | format('@(dd-MM-yyyy HH:mm)') }}</div>
+								<div class="status">{{ if m.isfinished }}<b class="green"><i class="fa fa-check-circle"></i>@(Kết thúc)</b>{{ else }}{{ m.status }}{{ fi }}</div>
 							</div>
 						</div>
 					{{ end }}

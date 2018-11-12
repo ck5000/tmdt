@@ -5,14 +5,14 @@
 <div class="hidden" data-b="shoppingcart.items" data-b-visible="!value || !value.length">
 	<br />
 	<div class="empty">
-		@(Your shopping cart is empty, <b>try to visit this page later.</b>)
+		@(Giỏ hàng trống)
 	</div>
 	<br />
 </div>
 
 <div class="row hidden" data-b="shoppingcart.items" data-b-visible="value && value.length > 0">
 	<div class="col-md-5 m col-md-push-7">
-		<div class="caption">@(Your shopping cart)</div>
+		<div class="caption">@(Giỏ hàng của bạn)</div>
 		<div data-jc="checkout" data-currency="@{global.config.currency_entity}">
 			<script type="text/html">
 				<div class="checkout-container">
@@ -21,8 +21,8 @@
 					<div class="checkout-controls">
 						<div class="sum">..</div>
 						<div class="count"><input type="text" maxlength="2" /></div>
-						<div class="price">/ @(1 piece =) <span>...</span></div>
-						<div class="stock">@(In stock:) <b>...</b></div>
+						<div class="price">/ @(1 quyển =) <span>...</span></div>
+						<div class="stock">@(Số lượng có sẵn trong kho:) <b>...</b></div>
 					</div>
 				</div>
 			</script>
@@ -33,27 +33,27 @@
 			<div class="contentbody">
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.firstname" data-jc-config="required:true;maxlength:40">@(First name)</div>
+						<div data-jc="textbox" data-jc-path="order.form.firstname" data-jc-config="required:true;maxlength:40">@(Tên)</div>
 					</div>
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.lastname" data-jc-config="required:true;maxlength:40">@(Last name)</div>
+						<div data-jc="textbox" data-jc-path="order.form.lastname" data-jc-config="required:true;maxlength:40">@(Họ)</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.email" data-jc-config="required:true;type:email;maxlength:120" data-jc-value="'@'">@(Email address)</div>
+						<div data-jc="textbox" data-jc-path="order.form.email" data-jc-config="required:true;type:email;maxlength:120" data-jc-value="'@'">@(Địa chỉ email)</div>
 					</div>
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.phone" data-jc-config="required:true;type:phone;placeholder:@(International format);maxlength:25">@(Phone number)</div>
+						<div data-jc="textbox" data-jc-path="order.form.phone" data-jc-config="required:true;type:phone;maxlength:25">@(Số điện thoại)</div>
 					</div>
 				</div>
 			</div>
 			<hr class="nmt nmb" />
 			<div class="contentbody">
-				<div class="caption"><i class="fa fa-address-card"></i>@(Billing address)</div>
+				<div class="caption"><i class="fa fa-address-card"></i>@(Địa chỉ xuất hoá đơn)</div>
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.billingstreet" data-jc-config="required:true;maxlength:50">@(Street)</div>
+						<div data-jc="textbox" data-jc-path="order.form.billingstreet" data-jc-config="required:true;maxlength:50">@(Đường)</div>
 					</div>
 					<div class="col-md-3 m">
 						<div data-jc="textbox" data-jc-path="order.form.billingzip" data-jc-config="required:true;type:zip;align:center">@(ZIP)</div>
@@ -61,51 +61,51 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.billingcity" data-jc-config="required:true;maxlength:50">@(City)</div>
+						<div data-jc="textbox" data-jc-path="order.form.billingcity" data-jc-config="required:true;maxlength:50">@(Thành phố)</div>
 					</div>
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.billingcountry" data-jc-config="required:true;maxlength:50">@(Country)</div>
+						<div data-jc="textbox" data-jc-path="order.form.billingcountry" data-jc-config="required:true;maxlength:50">@(Quốc gia)</div>
 					</div>
 				</div>
-				<div data-jc="checkbox" data-jc-path="order.form.iscompany">@(Billing to company)</div>
+				<div data-jc="checkbox" data-jc-path="order.form.iscompany">@(Xuất hoá đơn công ty)</div>
 			</div>
 			<div  data-b="order.form.iscompany" data-b-visible="value === true" class="hidden contentbody bg-yellow">
-				<div data-jc="textbox" data-jc-path="order.form.company" data-jc-config="maxlength:40;required:true" class="m">@(Company name)</div>
+				<div data-jc="textbox" data-jc-path="order.form.company" data-jc-config="maxlength:40;required:true" class="m">@(Tên công ty)</div>
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.companyid" data-jc-config="maxlength:15;required:true">@(Company ID)</div>
+						<div data-jc="textbox" data-jc-path="order.form.companyid" data-jc-config="maxlength:15;required:true">@(Mã công ty)</div>
 					</div>
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.companyvat" data-jc-config="maxlength:30;required:true">@(VAT number)</div>
+						<div data-jc="textbox" data-jc-path="order.form.companyvat" data-jc-config="maxlength:30;required:true">@(Mã số thuế)</div>
 					</div>
 				</div>
 			</div>
 			<hr class="nmt nmb" />
 			<div class="contentbody">
-				<div data-jc="dropdown" data-jc-path="order.form.delivery" data-jc-config="icon:truck;required:true;datasource:order.dependencies.deliverytypes;empty:">@(Delivery)</div>
-				<div class="help m">@(Please choose a type of delivery.)</div>
-				<div data-jc="dropdown" data-jc-path="order.form.payment" data-jc-config="icon:credit-card;required:true;datasource:order.dependencies.paymenttypes;empty:">@(Payment)</div>
-				<div class="help">@(Please choose a type of payment.)</div>
+				<div data-jc="dropdown" data-jc-path="order.form.delivery" data-jc-config="icon:truck;required:true;datasource:order.dependencies.deliverytypes;empty:">@(Vận chuyển)</div>
+				<div class="help m">@(Vui lòng chọn một đơn vị vận chuyển.)</div>
+				<div data-jc="dropdown" data-jc-path="order.form.payment" data-jc-config="icon:credit-card;required:true;datasource:order.dependencies.paymenttypes;empty:">@(Thanh toán)</div>
+				<div class="help">@(Vui lòng chọn hình thức thanh toán.)</div>
 			</div>
 			<div class="contentbody bg-yellow">
-				<div class="caption"><i class="fa fa-address-card"></i>@(Delivery address)</div>
+				<div class="caption"><i class="fa fa-address-card"></i>@(Địa chỉ giao hàng)</div>
 
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.deliveryfirstname" data-jc-config="required:true;maxlength:40">@(First name)</div>
+						<div data-jc="textbox" data-jc-path="order.form.deliveryfirstname" data-jc-config="required:true;maxlength:40">@(Tên)</div>
 					</div>
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.deliverylastname" data-jc-config="required:true;maxlenght:40">@(Last name)</div>
+						<div data-jc="textbox" data-jc-path="order.form.deliverylastname" data-jc-config="required:true;maxlenght:40">@(Họ)</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.deliveryphone" data-jc-config="required:true;type:phone;placeholder:@(International format);maxlength:25">@(Phone number)</div>
-						<div class="help">@(This phone number is for courier.)</div>
+						<div data-jc="textbox" data-jc-path="order.form.deliveryphone" data-jc-config="required:true;type:phone;maxlength:25">@(Số điện thoại)</div>
+						<div class="help">@(Số điện thoại để người giao hàng liên lạc với bạn.)</div>
 					</div>
 					<div class="col-md-6" style="margin-top:10px">
 						<br class="hidden-xs" />
-						<a href="javascript:void(0)" class="copy exec" data-exec="ordercopypersonal"><i class="fa fa-copy"></i>@(Copy same data as above)</a>
+						<a href="javascript:void(0)" class="copy exec" data-exec="ordercopypersonal"><i class="fa fa-copy"></i>@(Sao chép thông tin giống phía trên)</a>
 					</div>
 				</div>
 			</div>
@@ -113,7 +113,7 @@
 			<div class="contentbody bg-yellow">
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.deliverystreet" data-jc-config="required:true;maxlength:50">@(Street)</div>
+						<div data-jc="textbox" data-jc-path="order.form.deliverystreet" data-jc-config="required:true;maxlength:50">@(Đường)</div>
 					</div>
 					<div class="col-md-3 m">
 						<div data-jc="textbox" data-jc-path="order.form.deliveryzip" data-jc-config="required:true;type:zip;align:center">@(ZIP)</div>
@@ -121,21 +121,21 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.deliverycity" data-jc-config="required:true;maxlength:50">@(City)</div>
+						<div data-jc="textbox" data-jc-path="order.form.deliverycity" data-jc-config="required:true;maxlength:50">@(Thành phố)</div>
 					</div>
 					<div class="col-md-6 m">
-						<div data-jc="textbox" data-jc-path="order.form.deliverycountry" data-jc-config="required:true;maxlength:50">@(Country)</div>
+						<div data-jc="textbox" data-jc-path="order.form.deliverycountry" data-jc-config="required:true;maxlength:50">@(Quốc gia)</div>
 					</div>
 				</div>
-				<a href="javascript:void(0)" class="copy exec" data-exec="ordercopyaddress"><i class="fa fa-copy"></i>@(Copy from billing address)</a>
+				<a href="javascript:void(0)" class="copy exec" data-exec="ordercopyaddress"><i class="fa fa-copy"></i>@(Sao chép từ địa chỉ xuất hoá đơn)</a>
 			</div>
 			<div class="contentbody">
-				<div data-jc="textarea" data-jc-path="order.form.note" class="m">@(Note)</div>
-				<div data-jc="checkbox" data-jc-path="order.form.isnewsletter" data-jc-value="true">@(I want to be notified about discounts and news)</div>
-				<div data-jc="checkbox" data-jc-path="order.form.isterms" class="m b red">@(I agree with terms and conditions)</div>
+				<div data-jc="textarea" data-jc-path="order.form.note" class="m">@(Ghi chú thêm)</div>
+				<div data-jc="checkbox" data-jc-path="order.form.isnewsletter" data-jc-value="true">@(Tôi muốn đăng kí nhận thông tin về sản phẩm và khuyến mãi)</div>
+				<div data-jc="checkbox" data-jc-path="order.form.isterms" class="m b red">@(Tôi đồng ý với các điều khoản và chính sách)</div>
 				<div data-jc="error" data-jc-path="order.form.response"></div>
 				<div data-jc="validation" data-jc-path="order.form" data-jc-config="flags:visible">
-					<button class="button b exec" data-exec="ordersubmit" name="submit" disabled="disabled"><i class="fa fa-send"></i>@(Submit order)</button>
+					<button class="button b exec" data-exec="ordersubmit" name="submit" disabled="disabled"><i class="fa fa-send"></i>@(Đặt hàng)</button>
 				</div>
 			</div>
 		</div>
@@ -205,13 +205,13 @@
 					var product = shoppingcart.read(ccontainer.attrd('token'));
 					var item = ccontainer.get(0).$item;
 					count = shoppingcart.upd(product.token, count);
-					item.sum.html(currency.format((count * product.sum).format(2)));
+					item.sum.html(currency.format((count * product.sum).format(1)));
 					input.value = count;
 				}, 500, 10, this);
 			});
 
 			self.on('shoppingcart.sum', function(data) {
-				summarize.html(currency.format(data.sum.format(2)));
+				summarize.html(currency.format(data.sum.format(1)));
 				!skip && self.render();
 			});
 		};
@@ -225,8 +225,8 @@
 					obj.name.html(item.name);
 					item.variant && obj.variant.html(item.variant);
 					obj.count.val(item.count);
-					obj.price.html(currency.format(item.sum.format(2)));
-					obj.sum.html(currency.format((item.count * item.sum).format(2)));
+					obj.price.html(currency.format(item.sum.format(1)));
+					obj.sum.html(currency.format((item.count * item.sum).format(1)));
 
 					if (item.stock)
 						obj.stock.html(item.stock).rclass('red');

@@ -9,8 +9,8 @@
 				<div class="postbody">
 					<a href="@{sitemap_url('post', m.linker)}" class="title">@{m.name}</a>
 					<p>@{m.description}</p>
-					<a href="@{sitemap_url('post', m.linker)}" class="read"><i class="fa fa-plus"></i>@(Read more)</a>
-					<div class="date"><i class="fa fa-calendar"></i>@{m.date.format('@(yyyy-MM-dd)')}</div>
+					<a href="@{sitemap_url('post', m.linker)}" class="read"><i class="fa fa-plus"></i>@(Xem chi tiết)</a>
+					<div class="date"><i class="fa fa-calendar"></i>@{m.date.format('@(dd-MM-yyyy)')}</div>
 				</div>
 			</div>
 		</div>
@@ -19,5 +19,5 @@
 	@{view('/partials/pagination', model)}
 @{else}
 	<br />
-	<div class="empty"><i class="fa fa-search"></i>@(No posts in database.)</div>
+	<div class="empty"><i class="fa fa-search"></i>@(Không có bài viết)</div>
 @{fi}

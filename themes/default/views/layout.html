@@ -49,9 +49,9 @@
 							@{foreach m in F.global.navigations.panel.children}
 								<a href="@{m.url}"><i class="fa fa-caret-right"></i>@{m.name}</a>
 							@{end}
-							<a href="@{sitemap_url('new')}"><i class="fa fa-caret-right"></i>@(Sách mới)</a>
-							<a href="@{sitemap_url('top')}"><i class="fa fa-caret-right"></i>@(Sách hay)</a>
-							<a href="@{sitemap_url('popular')}"><i class="fa fa-caret-right"></i>@(Sách được quan tâm)<span>@(NEW)</span></a>
+							<a href="@{sitemap_url('new')}"><i class="fa fa-caret-right"></i>@(Sách mới ra mắt)</a>
+							<a href="@{sitemap_url('top')}"><i class="fa fa-caret-right"></i>@(Sách bán chạy)</a>
+							<a href="@{sitemap_url('popular')}"><i class="fa fa-caret-right"></i>@(Sách được quan tâm)<span>@(MỚI)</span></a>
 							<a href="@{sitemap_url('category')}"><i class="fa fa-caret-right"></i>@(Tất cả sách)</a>
 						</nav>
 						<div class="categoriesbody npb">
@@ -72,7 +72,7 @@
 							@{end}
 						</nav>
 						<div class="shoppingcart" data-m="shoppingcart.sum + shoppingcart">
-							<a href="@{sitemap_url('checkout')}"><b data-b="shoppingcart.sum" data-b-html="'@{global.config.currency_entity}'.format(value ? value.format(2) : (0).format(2))">...</b><span>@(Giỏ hàng)</span></a>
+							<a href="@{sitemap_url('checkout')}"><b data-b="shoppingcart.sum" data-b-html="'@{global.config.currency_entity}'.format(value ? value.format(1) : (0).format(1))">...</b><span>@(Giỏ hàng)</span></a>
 						</div>
 						<form class="search" action="@{sitemap_url('category')}" method="get">
 							<button><i class="fa fa-search"></i></button>
@@ -98,6 +98,10 @@
 	<br />
 
 	<script src="@{global.js}"></script>
+
+	<div class="zalo-chat-widget" data-oaid="2135211005190022887" data-welcome-message="Bạn cần tư vấn gì?" data-autopopup="0" data-width="350" data-height="420"></div>
+
+	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 
 </body>
 </html>

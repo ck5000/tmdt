@@ -1,1 +1,1 @@
-web: node debug.js
+web: node release.js
